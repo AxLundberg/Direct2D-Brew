@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/channel.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "324f08a15bd27559a281f2eb75113c88d2d6b23e944008e5b5eb1741fa4fd5be"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/channel.h"
+          },
+          "hashes": {
+            "sha-256": "9ec3b9aadadb81ec51681831eea81df6e171b57b9d3f5e181a3e51edbb8d36ed"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/driver.h"
+          },
+          "hashes": {
+            "sha-256": "db93de01d06db02cf2401789ed6bea563170aac7de72adad5eeefc6a581b846d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/policy.h"
+          },
+          "hashes": {
+            "sha-256": "f2d39c7d5a924492d2099fd92e78b8b90137b1e9339ad7a8853e5b26c32404d0"
+          }
+        }
+      ]
+    }
+  ]
+}

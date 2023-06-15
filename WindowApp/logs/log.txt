@@ -1,0 +1,12 @@
+@Info {2023-06-13 11:29:40.6906004 CEST} Hello Window
+  >> at wWinMain
+     C:\Users\axel_\Brewski\Copper2.0\WindowApp\Main.cpp(27)
+@Info {2023-06-13 11:30:00.1988450 CEST} Hello Window
+  >> at wWinMain
+     C:\Users\axel_\Brewski\Copper2.0\WindowApp\Main.cpp(27)
+@Info {2023-06-13 11:31:48.5468109 CEST} Hello Window
+  >> at wWinMain
+     C:\Users\axel_\Brewski\Copper2.0\WindowApp\Main.cpp(27)
+@Info {2023-06-14 10:03:06.3561982 CEST} Hello Window
+  >> at wWinMain
+     C:\Users\axel_\Brewski\Copper2.0\WindowApp\Main.cpp(27)

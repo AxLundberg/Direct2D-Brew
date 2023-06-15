@@ -1,0 +1,75 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/noreturn.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "1d719921d3b07a7504a0df013f1829393dbae9adce12b8e3882f3634104e661e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/noreturn.h"
+          },
+          "hashes": {
+            "sha-256": "0bbab1160b52419b7ae23d042c90681c1eb25dacb3bd1a8fa9db3002f6b23ebb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/assert.h"
+          },
+          "hashes": {
+            "sha-256": "01ab35e5681b1f2cf99cfa4f28d8b5f11c4d0c6c39acf95a0ab53f142f1b3e2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/stacktrace.h"
+          },
+          "hashes": {
+            "sha-256": "8a7e358d1582d2dd470b4fb94eb96d5f30e0a3c8849d90527e486f357486f5d2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/macro.h"
+          },
+          "hashes": {
+            "sha-256": "4b19c21c847af65828380cb1689aa8173e2186e6c36def83a1d06d3abc0f403e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/exception.h"
+          },
+          "hashes": {
+            "sha-256": "a87671e3c208f87c0b7ebf85d241281c810d771bbec7d9bc8bb8bd7c2aefc55a"
+          }
+        }
+      ]
+    }
+  ]
+}

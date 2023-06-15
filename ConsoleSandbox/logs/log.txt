@@ -1,0 +1,1789 @@
+@Fatal {2023-05-15 16:18:20.3537094 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(26)
+Stack trace (most recent call last):
+#11   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#10
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#9 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#8 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#7 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#6 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27): , in main
+         24: {
+         25: 	Boot();
+         26: 	cprlog.Fatal(L"FATAL!");
+      >  27: 	cprlog.Warn(L"WARN!");
+         28: 
+         29: 	UTL::StackTrace st;
+         30: 	auto st2 = std::move(st);
+#5 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\log\EntryBuilder.cpp(81): , in CPR::LOG::EntryBuilder::~EntryBuilder
+         78: 		{
+         79: 			if ((int)level <= (int)LogLevel::Error)
+         80: 				trace.emplace();
+      >  81: 			mDest->Submit(*this);
+         82: 		}
+         83: 	}
+         84: }
+#4 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(334): , in std::optional<CPR::UTL::StackTrace>::emplace<>
+        331:         is_nothrow_constructible_v<_Ty, _Types...>) /* strengthened */ {
+        332:         reset();
+        333:         return this->_Construct(_STD forward<_Types>(_Args)...);
+      > 334:     }
+        335: 
+        336:     template <class _Elem, class... _Types,
+        337:         enable_if_t<is_constructible_v<_Ty, initializer_list<_Elem>&, _Types...>, int> = 0>
+#3 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(148): , in std::_Optional_construct_base<CPR::UTL::StackTrace>::_Construct<>
+        145:         // transition from the empty to the value-containing state
+        146:         _STL_INTERNAL_CHECK(!this->_Has_value);
+        147:         _Construct_in_place(this->_Value, _STD forward<_Types>(_Args)...);
+      > 148:         this->_Has_value = true;
+        149:         return this->_Value;
+        150:     }
+#2 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(233): , in std::_Construct_in_place<CPR::UTL::StackTrace>
+        230:     {
+        231:         ::new (_Voidify_iter(_STD addressof(_Obj))) _Ty(_STD forward<_Types>(_Args)...);
+        232:     }
+      > 233: }
+        234: 
+        235: template <class _Ty>
+        236: void _Default_construct_in_place(_Ty& _Obj) noexcept(is_nothrow_default_constructible_v<_Ty>) {
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\StackTrace.cpp(18): , in CPR::UTL::StackTrace::StackTrace
+         15: 		backward::TraceResolver thisIsAWorkaround; // https://github.com/bombela/backward-cpp/issues/206
+         16: 		mTrace = std::make_unique<backward::StackTrace>();
+         17: 		mTrace->load_here(64);
+      >  18: 		if (skip != 0) {
+         19: 			mTrace->skip_n_firsts(skip);
+         20: 		}
+         21: 	}
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\Core\thirdParty\backward.h(1152): , in backward::StackTraceImpl<backward::system_tag::windows_tag>::load_here
+       1149:                 RtlCaptureContext(ctx_);
+       1150:             }
+       1151: 
+      >1152:             if (!thd_) {
+       1153:                 thd_ = GetCurrentThread();
+       1154:             }
+
+@Error {2023-05-15 16:18:20.7267790 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(20)
+Stack trace (most recent call last):
+#12   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#11
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#10
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#9 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#8 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#7 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(36): , in main
+         33: 	std::wcout << st.Print() << std::endl;
+         34: 
+         35: 	StackTraceError();
+      >  36: 	return 0;
+         37: }
+#6 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21): , in StackTraceError
+         18: void StackTraceError()
+         19: {
+         20: 	cprlog.Error(L"ERROR!");
+      >  21: }
+         22: 
+         23: int main()
+         24: {
+#5 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\log\EntryBuilder.cpp(81): , in CPR::LOG::EntryBuilder::~EntryBuilder
+         78: 		{
+         79: 			if ((int)level <= (int)LogLevel::Error)
+         80: 				trace.emplace();
+      >  81: 			mDest->Submit(*this);
+         82: 		}
+         83: 	}
+         84: }
+#4 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(334): , in std::optional<CPR::UTL::StackTrace>::emplace<>
+        331:         is_nothrow_constructible_v<_Ty, _Types...>) /* strengthened */ {
+        332:         reset();
+        333:         return this->_Construct(_STD forward<_Types>(_Args)...);
+      > 334:     }
+        335: 
+        336:     template <class _Elem, class... _Types,
+        337:         enable_if_t<is_constructible_v<_Ty, initializer_list<_Elem>&, _Types...>, int> = 0>
+#3 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(148): , in std::_Optional_construct_base<CPR::UTL::StackTrace>::_Construct<>
+        145:         // transition from the empty to the value-containing state
+        146:         _STL_INTERNAL_CHECK(!this->_Has_value);
+        147:         _Construct_in_place(this->_Value, _STD forward<_Types>(_Args)...);
+      > 148:         this->_Has_value = true;
+        149:         return this->_Value;
+        150:     }
+#2 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(233): , in std::_Construct_in_place<CPR::UTL::StackTrace>
+        230:     {
+        231:         ::new (_Voidify_iter(_STD addressof(_Obj))) _Ty(_STD forward<_Types>(_Args)...);
+        232:     }
+      > 233: }
+        234: 
+        235: template <class _Ty>
+        236: void _Default_construct_in_place(_Ty& _Obj) noexcept(is_nothrow_default_constructible_v<_Ty>) {
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\StackTrace.cpp(18): , in CPR::UTL::StackTrace::StackTrace
+         15: 		backward::TraceResolver thisIsAWorkaround; // https://github.com/bombela/backward-cpp/issues/206
+         16: 		mTrace = std::make_unique<backward::StackTrace>();
+         17: 		mTrace->load_here(64);
+      >  18: 		if (skip != 0) {
+         19: 			mTrace->skip_n_firsts(skip);
+         20: 		}
+         21: 	}
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\Core\thirdParty\backward.h(1152): , in backward::StackTraceImpl<backward::system_tag::windows_tag>::load_here
+       1149:                 RtlCaptureContext(ctx_);
+       1150:             }
+       1151: 
+      >1152:             if (!thd_) {
+       1153:                 thd_ = GetCurrentThread();
+       1154:             }
+
+@Fatal {2023-05-19 12:10:35.2228830 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(26)
+Stack trace (most recent call last):
+#11   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#10
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#9 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#8 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#7 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#6 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27): , in main
+         24: {
+         25: 	Boot();
+         26: 	cprlog.Fatal(L"FATAL!");
+      >  27: 	cprlog.Warn(L"WARN!");
+         28: 
+         29: 	UTL::StackTrace st;
+         30: 	auto st2 = std::move(st);
+#5 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\log\EntryBuilder.cpp(81): , in CPR::LOG::EntryBuilder::~EntryBuilder
+         78: 		{
+         79: 			if ((int)level <= (int)LogLevel::Error)
+         80: 				trace.emplace();
+      >  81: 			mDest->Submit(*this);
+         82: 		}
+         83: 	}
+         84: }
+#4 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(334): , in std::optional<CPR::UTL::StackTrace>::emplace<>
+        331:         is_nothrow_constructible_v<_Ty, _Types...>) /* strengthened */ {
+        332:         reset();
+        333:         return this->_Construct(_STD forward<_Types>(_Args)...);
+      > 334:     }
+        335: 
+        336:     template <class _Elem, class... _Types,
+        337:         enable_if_t<is_constructible_v<_Ty, initializer_list<_Elem>&, _Types...>, int> = 0>
+#3 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(148): , in std::_Optional_construct_base<CPR::UTL::StackTrace>::_Construct<>
+        145:         // transition from the empty to the value-containing state
+        146:         _STL_INTERNAL_CHECK(!this->_Has_value);
+        147:         _Construct_in_place(this->_Value, _STD forward<_Types>(_Args)...);
+      > 148:         this->_Has_value = true;
+        149:         return this->_Value;
+        150:     }
+#2 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(233): , in std::_Construct_in_place<CPR::UTL::StackTrace>
+        230:     {
+        231:         ::new (_Voidify_iter(_STD addressof(_Obj))) _Ty(_STD forward<_Types>(_Args)...);
+        232:     }
+      > 233: }
+        234: 
+        235: template <class _Ty>
+        236: void _Default_construct_in_place(_Ty& _Obj) noexcept(is_nothrow_default_constructible_v<_Ty>) {
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\StackTrace.cpp(18): , in CPR::UTL::StackTrace::StackTrace
+         15: 		backward::TraceResolver thisIsAWorkaround; // https://github.com/bombela/backward-cpp/issues/206
+         16: 		mTrace = std::make_unique<backward::StackTrace>();
+         17: 		mTrace->load_here(64);
+      >  18: 		if (skip != 0) {
+         19: 			mTrace->skip_n_firsts(skip);
+         20: 		}
+         21: 	}
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\Core\thirdParty\backward.h(1152): , in backward::StackTraceImpl<backward::system_tag::windows_tag>::load_here
+       1149:                 RtlCaptureContext(ctx_);
+       1150:             }
+       1151: 
+      >1152:             if (!thd_) {
+       1153:                 thd_ = GetCurrentThread();
+       1154:             }
+
+@Error {2023-05-19 12:10:35.6257653 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(20)
+Stack trace (most recent call last):
+#12   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#11
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#10
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#9 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#8 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#7 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(36): , in main
+         33: 	std::wcout << st.Print() << std::endl;
+         34: 
+         35: 	StackTraceError();
+      >  36: 	return 0;
+         37: }
+#6 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21): , in StackTraceError
+         18: void StackTraceError()
+         19: {
+         20: 	cprlog.Error(L"ERROR!");
+      >  21: }
+         22: 
+         23: int main()
+         24: {
+#5 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\log\EntryBuilder.cpp(81): , in CPR::LOG::EntryBuilder::~EntryBuilder
+         78: 		{
+         79: 			if ((int)level <= (int)LogLevel::Error)
+         80: 				trace.emplace();
+      >  81: 			mDest->Submit(*this);
+         82: 		}
+         83: 	}
+         84: }
+#4 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(334): , in std::optional<CPR::UTL::StackTrace>::emplace<>
+        331:         is_nothrow_constructible_v<_Ty, _Types...>) /* strengthened */ {
+        332:         reset();
+        333:         return this->_Construct(_STD forward<_Types>(_Args)...);
+      > 334:     }
+        335: 
+        336:     template <class _Elem, class... _Types,
+        337:         enable_if_t<is_constructible_v<_Ty, initializer_list<_Elem>&, _Types...>, int> = 0>
+#3 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\optional(148): , in std::_Optional_construct_base<CPR::UTL::StackTrace>::_Construct<>
+        145:         // transition from the empty to the value-containing state
+        146:         _STL_INTERNAL_CHECK(!this->_Has_value);
+        147:         _Construct_in_place(this->_Value, _STD forward<_Types>(_Args)...);
+      > 148:         this->_Has_value = true;
+        149:         return this->_Value;
+        150:     }
+#2 
+   C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(233): , in std::_Construct_in_place<CPR::UTL::StackTrace>
+        230:     {
+        231:         ::new (_Voidify_iter(_STD addressof(_Obj))) _Ty(_STD forward<_Types>(_Args)...);
+        232:     }
+      > 233: }
+        234: 
+        235: template <class _Ty>
+        236: void _Default_construct_in_place(_Ty& _Obj) noexcept(is_nothrow_default_constructible_v<_Ty>) {
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\StackTrace.cpp(18): , in CPR::UTL::StackTrace::StackTrace
+         15: 		backward::TraceResolver thisIsAWorkaround; // https://github.com/bombela/backward-cpp/issues/206
+         16: 		mTrace = std::make_unique<backward::StackTrace>();
+         17: 		mTrace->load_here(64);
+      >  18: 		if (skip != 0) {
+         19: 			mTrace->skip_n_firsts(skip);
+         20: 		}
+         21: 	}
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\Core\thirdParty\backward.h(1152): , in backward::StackTraceImpl<backward::system_tag::windows_tag>::load_here
+       1149:                 RtlCaptureContext(ctx_);
+       1150:             }
+       1151: 
+      >1152:             if (!thd_) {
+       1153:                 thd_ = GetCurrentThread();
+       1154:             }
+
+@Fatal {2023-05-21 13:53:51.9255432 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Error {2023-05-21 13:53:52.1461360 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	StackTraceError();
+         40: 	return 0;
+         41: }
+
+@Error {2023-05-21 13:53:52.1562838 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(40): , in main
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+         39: 	StackTraceError();
+      >  40: 	return 0;
+         41: }
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(22): , in StackTraceError
+         19: void StackTraceError()
+         20: {
+         21: 	cprlog.Error(L"ERROR!");
+      >  22: }
+         23: 
+         24: int main()
+         25: {
+
+@Fatal {2023-05-21 13:55:33.7809841 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Error {2023-05-21 13:55:33.9840092 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	StackTraceError();
+         40: 	return 0;
+         41: }
+
+@Error {2023-05-21 13:55:33.9937381 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(40): , in main
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+         39: 	StackTraceError();
+      >  40: 	return 0;
+         41: }
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(22): , in StackTraceError
+         19: void StackTraceError()
+         20: {
+         21: 	cprlog.Error(L"ERROR!");
+      >  22: }
+         23: 
+         24: int main()
+         25: {
+
+@Fatal {2023-05-21 13:56:47.0287066 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Error {2023-05-21 13:56:47.2304672 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	StackTraceError();
+         40: 	return 0;
+         41: }
+
+@Error {2023-05-21 13:56:47.2390787 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(40): , in main
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+         39: 	StackTraceError();
+      >  40: 	return 0;
+         41: }
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(22): , in StackTraceError
+         19: void StackTraceError()
+         20: {
+         21: 	cprlog.Error(L"ERROR!");
+      >  22: }
+         23: 
+         24: int main()
+         25: {
+
+@Fatal {2023-05-21 13:58:47.8677718 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 13:58:47.9984950 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21)
+Stack trace (most recent call last):
+
+@Fatal {2023-05-21 14:00:06.4029786 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 14:00:06.5251695 CEST} ERROR!
+  >> in function: StackTraceError
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(21)
+Stack trace (most recent call last):
+
+@Fatal {2023-05-21 14:04:57.3806006 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 14:04:57.5117264 CEST} Assertion failed, x > y
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39)
+Stack trace (most recent call last):
+
+@Fatal {2023-05-21 14:06:39.8882793 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Fatal {2023-05-21 14:06:40.0858203 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	cpr_check(x > y);
+         40: 
+         41: 	return 0;
+         42: }
+
+@Fatal {2023-05-21 14:07:41.8360165 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 14:07:41.9690721 CEST} Assertion failed, x > y
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39)
+Stack trace (most recent call last):
+
+@Fatal {2023-05-21 14:45:51.0737287 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 14:45:51.2679141 CEST} Assertion failed, x > y
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 14:45:51.2730966 CEST} Assertion failed, x > y
+   x => 0
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43)
+Stack trace (most recent call last):
+#20   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#19
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#18
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43): , in main
+         41: 	try
+         42: 	{
+      >  43: 		cpr_check(x > y).assert_watch(x).Ex();
+         44: 	}
+         45: 	catch (const std::exception& e)
+         46: 	{
+#17
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(40): , in CPR::UTL::Assertion::Ex
+         37: 	void Assertion::Ex()
+         38: 	{
+         39: 		mConsequence = Consequence::Exception;
+      >  40: 		throw FailedAssertion{};
+         41: 	}
+         42: }
+#16   Object "", at 00007FFDF03E6720, in CxxThrowException
+#15   Object "", at 00007FFDF796CF19, in RaiseException
+#14   Object "", at 00007FFDF9DD0F0E, in KiUserExceptionDispatcher
+#13   Object "", at 00007FFDF9D814A4, in RtlRaiseException
+#12   Object "", at 00007FFDF9DD23DF, in _chkstk
+#11
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#10   Object "", at 00007FFDE1244149, in _CxxFrameHandler4
+#9    Object "", at 00007FFDE124237A, in _NLG_Return2
+#8    Object "", at 00007FFDE1242317, in _NLG_Return2
+#7    Object "", at 00007FFDE12419D5, in _NLG_Return2
+#6    Object "", at 00007FFDE1241635, in _NLG_Return2
+#5    Object "", at 00007FFDE1243DDE, in _NLG_Return2
+#4    Object "", at 00007FFDF9D60939, in RtlUnwindEx
+#3    Object "", at 00007FFDF9DD245F, in _chkstk
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#1    Object "", at 00007FFDE1244149, in _CxxFrameHandler4
+#0    Object "", at 00007FFDE124237A, in _NLG_Return2
+
+@Fatal {2023-05-21 15:43:15.2420367 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Fatal {2023-05-21 15:43:15.4456442 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 41
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(36)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(38): , in main
+         35: 	int x = 0, y = 1;
+         36: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x, y, rand());
+         37: 
+      >  38: 	cpr_check(x > y);
+         39: 
+         40: 	try
+         41: 	{
+
+@Fatal {2023-05-21 15:47:22.0409524 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Fatal {2023-05-21 15:47:22.2867147 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 41
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(36)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(38): , in main
+         35: 	int x = 0, y = 1;
+         36: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x, y, rand());
+         37: 
+      >  38: 	cpr_check(x > y);
+         39: 
+         40: 	try
+         41: 	{
+
+@Fatal {2023-05-21 16:06:11.1191092 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Fatal {2023-05-21 16:06:11.3265699 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 41
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	chilass(x > y).Msg(L"TEST ASSERT").ass_watch(x, y, rand());
+         38: 
+      >  39: 	chilchk(x > y);
+         40: 
+         41: 	try
+         42: 	{
+
+@Fatal {2023-05-21 16:19:52.9526917 CEST} Oh noes!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31): , in main
+         28: 	Boot();
+         29: 
+         30: 	cprlog.Fatal(L"Oh noes!");
+      >  31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+         34: 	int x = 0, y = 1;
+
+@Warn {2023-05-21 16:19:53.0595419 CEST} huh
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+@Error {2023-05-21 16:19:53.0608643 CEST} oops!
+  >> in function: f
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(23)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(34): , in main
+         31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+      >  34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x, y, rand());
+         36: 
+         37: 	chilchk(x > y);
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(24): , in f
+         21: void f()
+         22: {
+         23: 	cprlog.Error(L"oops!");
+      >  24: }
+         25: 
+         26: int main()
+         27: {
+
+@Fatal {2023-05-21 16:19:53.0727898 CEST} Assertion failed, x > y
+  Msg: butts
+   x => 41
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37): , in main
+         34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x, y, rand());
+         36: 
+      >  37: 	chilchk(x > y);
+         38: 
+         39: 	try {
+         40: 		chilchk(x > y).ass_watch(x).Ex();
+
+@Fatal {2023-05-21 16:50:55.8572283 CEST} Oh noes!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31): , in main
+         28: 	Boot();
+         29: 
+         30: 	cprlog.Fatal(L"Oh noes!");
+      >  31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+         34: 	int x = 0, y = 1;
+
+@Warn {2023-05-21 16:50:55.9612672 CEST} huh
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+@Error {2023-05-21 16:50:55.9621725 CEST} oops!
+  >> in function: f
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(23)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(34): , in main
+         31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+      >  34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x, y);
+         36: 
+         37: 	chilchk(x > y);
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(24): , in f
+         21: void f()
+         22: {
+         23: 	cprlog.Error(L"oops!");
+      >  24: }
+         25: 
+         26: int main()
+         27: {
+
+@Fatal {2023-05-21 16:50:55.9718948 CEST} Assertion failed, x > y
+  Msg: butts
+   x, y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37): , in main
+         34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x, y);
+         36: 
+      >  37: 	chilchk(x > y);
+         38: 
+         39: 	try {
+         40: 		chilchk(x > y).ass_watch(x).Ex();
+
+@Fatal {2023-05-21 17:01:32.2844607 CEST} Oh noes!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31): , in main
+         28: 	Boot();
+         29: 
+         30: 	cprlog.Fatal(L"Oh noes!");
+      >  31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+         34: 	int x = 0, y = 1;
+
+@Warn {2023-05-21 17:01:32.3888026 CEST} huh
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+@Error {2023-05-21 17:01:32.3899678 CEST} oops!
+  >> in function: f
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(23)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(34): , in main
+         31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+      >  34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+         37: 	chilchk(x > y);
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(24): , in f
+         21: void f()
+         22: {
+         23: 	cprlog.Error(L"oops!");
+      >  24: }
+         25: 
+         26: int main()
+         27: {
+
+@Fatal {2023-05-21 17:01:32.4014963 CEST} Assertion failed, x > y
+  Msg: butts
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37): , in main
+         34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+      >  37: 	chilchk(x > y);
+         38: 
+         39: 	try {
+         40: 		chilchk(x > y).ass_watch(x).Ex();
+
+@Fatal {2023-05-21 17:04:15.8361650 CEST} Oh noes!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31): , in main
+         28: 	Boot();
+         29: 
+         30: 	cprlog.Fatal(L"Oh noes!");
+      >  31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+         34: 	int x = 0, y = 1;
+
+@Warn {2023-05-21 17:04:15.9272300 CEST} huh
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+@Error {2023-05-21 17:04:15.9283707 CEST} oops!
+  >> in function: f
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(23)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(34): , in main
+         31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+      >  34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+         37: 	chilchk(x > y);
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(24): , in f
+         21: void f()
+         22: {
+         23: 	cprlog.Error(L"oops!");
+      >  24: }
+         25: 
+         26: int main()
+         27: {
+
+@Fatal {2023-05-21 17:04:15.9386682 CEST} Assertion failed, x > y
+  Msg: butts
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37): , in main
+         34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+      >  37: 	chilchk(x > y);
+         38: 
+         39: 	try {
+         40: 		chilchk(x > y).ass_watch(x).Ex();
+
+@Fatal {2023-05-21 17:06:28.8903718 CEST} Oh noes!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31): , in main
+         28: 	Boot();
+         29: 
+         30: 	cprlog.Fatal(L"Oh noes!");
+      >  31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+         34: 	int x = 0, y = 1;
+
+@Warn {2023-05-21 17:06:28.9868130 CEST} huh
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+@Error {2023-05-21 17:06:28.9879541 CEST} oops!
+  >> in function: f
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(23)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(34): , in main
+         31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+      >  34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+         37: 	chilchk(x > y);
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(24): , in f
+         21: void f()
+         22: {
+         23: 	cprlog.Error(L"oops!");
+      >  24: }
+         25: 
+         26: int main()
+         27: {
+
+@Fatal {2023-05-21 17:06:28.9962691 CEST} Assertion failed, x > y
+  Msg: butts
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37): , in main
+         34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+      >  37: 	chilchk(x > y);
+         38: 
+         39: 	try {
+         40: 		chilchk(x > y).ass_watch(x).Ex();
+
+@Fatal {2023-05-21 17:07:52.5285085 CEST} Oh noes!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31): , in main
+         28: 	Boot();
+         29: 
+         30: 	cprlog.Fatal(L"Oh noes!");
+      >  31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+         34: 	int x = 0, y = 1;
+
+@Warn {2023-05-21 17:07:52.6289277 CEST} huh
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+@Error {2023-05-21 17:07:52.6297806 CEST} oops!
+  >> in function: f
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(23)
+Stack trace (most recent call last):
+#6    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#5 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#1 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(34): , in main
+         31: 	cprlog.Warn(L"huh");
+         32: 	f();
+         33: 
+      >  34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+         37: 	chilchk(x > y);
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(24): , in f
+         21: void f()
+         22: {
+         23: 	cprlog.Error(L"oops!");
+      >  24: }
+         25: 
+         26: int main()
+         27: {
+
+@Fatal {2023-05-21 17:07:52.6393830 CEST} Assertion failed, x > y
+  Msg: butts
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37): , in main
+         34: 	int x = 0, y = 1;
+         35: 	chilass(x > y).Msg(L"butts").ass_watch(x).ass_watch(y);
+         36: 
+      >  37: 	chilchk(x > y);
+         38: 
+         39: 	try {
+         40: 		chilchk(x > y).ass_watch(x).Ex();
+
+@Fatal {2023-05-21 17:12:37.4459307 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(28): , in main
+         25: {
+         26: 	Boot();
+         27: 	cprlog.Fatal(L"FATAL!");
+      >  28: 	cprlog.Warn(L"WARN!");
+         29: 
+         30: 	UTL::StackTrace st;
+         31: 	auto st2 = std::move(st);
+
+@Fatal {2023-05-21 17:12:37.6644951 CEST} Assertion failed, x > y
+  Msg: TEST ASSERT
+   x => 0
+   y => 1
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(37)
+Stack trace (most recent call last):
+#5    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#4 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_main.cpp(17): , in mainCRTStartup
+#3 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(331): , in __scrt_common_main
+#2 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(79): , in invoke_main
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	cpr_check(x > y);
+         40: 
+         41: 	try
+         42: 	{
+
+@Fatal {2023-05-21 17:13:32.1306153 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-21 17:13:32.2501781 CEST} Assertion failed, x > y
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39)
+Stack trace (most recent call last):
+#2    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	cpr_check(x > y);
+         40: 
+         41: 	try
+         42: 	{
+
+@Error {2023-05-21 17:13:32.2567408 CEST} Assertion failed, x > y
+   x => 0
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43)
+Stack trace (most recent call last):
+#24   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#23
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#22
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43): , in main
+         41: 	try
+         42: 	{
+      >  43: 		cpr_check(x > y).assert_watch(x).Ex();
+         44: 	}
+         45: 	catch (const std::exception& e)
+         46: 	{
+#21
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(47): , in CPR::UTL::Assertion::Ex
+         44: 	{
+         45: 		mConsequence = Consequence::Exception;
+         46: 		mSkipDepth = SKIP_DEPTH_EX;
+      >  47: 		throw FailedAssertion{};
+         48: 	}
+         49: }
+#20   Object "", at 00007FFDF04A6720, in CxxThrowException
+#19   Object "", at 00007FFDF796CF19, in RaiseException
+#18   Object "", at 00007FFDF9DD0F0E, in KiUserExceptionDispatcher
+#17   Object "", at 00007FFDF9D814A4, in RtlRaiseException
+#16   Object "", at 00007FFDF9DD23DF, in _chkstk
+#15
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#14   Object "", at 00007FFDE1244149, in _CxxFrameHandler4
+#13   Object "", at 00007FFDE124237A, in _NLG_Return2
+#12   Object "", at 00007FFDE1242317, in _NLG_Return2
+#11   Object "", at 00007FFDE12419D5, in _NLG_Return2
+#10   Object "", at 00007FFDE1241635, in _NLG_Return2
+#9    Object "", at 00007FFDE1243DDE, in _NLG_Return2
+#8    Object "", at 00007FFDF9D60939, in RtlUnwindEx
+#7    Object "", at 00007FFDF9DD245F, in _chkstk
+#6 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#5    Object "", at 00007FFDE1244149, in _CxxFrameHandler4
+#4    Object "", at 00007FFDE124237A, in _NLG_Return2
+#3    Object "", at 00007FFDE12421E9, in _NLG_Return2
+#2    Object "", at 00007FFDE1242CC8, in _NLG_Return2
+#1    Object "", at 00007FFDE1241030, in  ?? 
+#0    Object "", at 00007FF6866CC9EF, in main$dtor$14
+
+@Fatal {2023-05-22 01:41:57.6905598 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-05-22 01:41:57.8846536 CEST} Assertion failed, x > y
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39)
+Stack trace (most recent call last):
+#2    Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	cpr_check(x > y);
+         40: 
+         41: 	try
+         42: 	{
+
+@Error {2023-05-22 01:41:57.8921183 CEST} Assertion failed, x > y
+   x => 0
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43)
+Stack trace (most recent call last):
+#24   Object "", at 00007FFDF8D87614, in BaseThreadInitThunk
+#23
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#22
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43): , in main
+         41: 	try
+         42: 	{
+      >  43: 		cpr_check(x > y).assert_watch(x).Ex();
+         44: 	}
+         45: 	catch (const std::exception& e)
+         46: 	{
+#21
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(47): , in CPR::UTL::Assertion::Ex
+         44: 	{
+         45: 		mConsequence = Consequence::Exception;
+         46: 		mSkipDepth = SKIP_DEPTH_EX;
+      >  47: 		throw FailedAssertion{};
+         48: 	}
+         49: }
+#20   Object "", at 00007FFDF03E6720, in CxxThrowException
+#19   Object "", at 00007FFDF796CF19, in RaiseException
+#18   Object "", at 00007FFDF9DD0F0E, in KiUserExceptionDispatcher
+#17   Object "", at 00007FFDF9D814A4, in RtlRaiseException
+#16   Object "", at 00007FFDF9DD23DF, in _chkstk
+#15
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#14   Object "", at 00007FFDE1244149, in _CxxFrameHandler4
+#13   Object "", at 00007FFDE124237A, in _NLG_Return2
+#12   Object "", at 00007FFDE1242317, in _NLG_Return2
+#11   Object "", at 00007FFDE12419D5, in _NLG_Return2
+#10   Object "", at 00007FFDE1241635, in _NLG_Return2
+#9    Object "", at 00007FFDE1243DDE, in _NLG_Return2
+#8    Object "", at 00007FFDF9D60939, in RtlUnwindEx
+#7    Object "", at 00007FFDF9DD245F, in _chkstk
+#6 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#5    Object "", at 00007FFDE1244149, in _CxxFrameHandler4
+#4    Object "", at 00007FFDE124237A, in _NLG_Return2
+#3    Object "", at 00007FFDE12421E9, in _NLG_Return2
+#2    Object "", at 00007FFDE1242CC8, in _NLG_Return2
+#1    Object "", at 00007FFDE1241030, in  ?? 
+#0    Object "", at 00007FF74C6EC9EF, in main$dtor$14
+
+@Fatal {2023-06-12 16:08:03.8128519 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(27)
+Stack trace (most recent call last):
+
+@Error {2023-06-12 16:08:04.0235201 CEST} Assertion failed, x > y
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39)
+Stack trace (most recent call last):
+#2    Object "", at 00007FF8A0177614, in BaseThreadInitThunk
+#1 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#0 
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(39): , in main
+         36: 	int x = 0, y = 1;
+         37: 	cpr_assert(x > y).Msg(L"TEST ASSERT").assert_watch(x).assert_watch(y);
+         38: 
+      >  39: 	cpr_check(x > y);
+         40: 
+         41: 	try
+         42: 	{
+
+@Error {2023-06-12 16:08:04.0309491 CEST} Assertion failed, x > y
+   x => 0
+
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43)
+Stack trace (most recent call last):
+#24   Object "", at 00007FF8A0177614, in BaseThreadInitThunk
+#23
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#22
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(43): , in main
+         41: 	try
+         42: 	{
+      >  43: 		cpr_check(x > y).assert_watch(x).Ex();
+         44: 	}
+         45: 	catch (const std::exception& e)
+         46: 	{
+#21
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(47): , in CPR::UTL::Assertion::Ex
+         44: 	{
+         45: 		mConsequence = Consequence::Exception;
+         46: 		mSkipDepth = SKIP_DEPTH_EX;
+      >  47: 		throw FailedAssertion{};
+         48: 	}
+         49: }
+#20   Object "", at 00007FF813226720, in CxxThrowException
+#19   Object "", at 00007FF89F50CF19, in RaiseException
+#18   Object "", at 00007FF8A18B0F0E, in KiUserExceptionDispatcher
+#17   Object "", at 00007FF8A18614A4, in RtlRaiseException
+#16   Object "", at 00007FF8A18B23DF, in _chkstk
+#15
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#14   Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#13   Object "", at 00007FF889EB237A, in _NLG_Return2
+#12   Object "", at 00007FF889EB2317, in _NLG_Return2
+#11   Object "", at 00007FF889EB19D5, in _NLG_Return2
+#10   Object "", at 00007FF889EB1635, in _NLG_Return2
+#9    Object "", at 00007FF889EB3DDE, in _NLG_Return2
+#8    Object "", at 00007FF8A1840939, in RtlUnwindEx
+#7    Object "", at 00007FF8A18B245F, in _chkstk
+#6 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#5    Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#4    Object "", at 00007FF889EB237A, in _NLG_Return2
+#3    Object "", at 00007FF889EB21E9, in _NLG_Return2
+#2    Object "", at 00007FF889EB2CC8, in _NLG_Return2
+#1    Object "", at 00007FF889EB1030, in  ?? 
+#0    Object "", at 00007FF7241EC9EF, in main$dtor$14
+
+@Fatal {2023-06-12 17:15:13.4880008 CEST} FATAL!
+  >> in function: main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(30)
+Stack trace (most recent call last):
+
+@Error {2023-06-12 17:30:19.1946306 CEST} ==No trace==
+@Fatal {2023-06-12 17:30:19.2065925 CEST} FATAL!
+  >> at main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+Stack trace (most recent call last):
+
+@Error {2023-06-12 17:30:19.2770272 CEST} Assertion failed, x > y
+   x => 0
+
+  >> at main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(40)
+Stack trace (most recent call last):
+#24   Object "", at 00007FF8A0177614, in BaseThreadInitThunk
+#23
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#22
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(40): , in main
+         37: 	int x = 0, y = 1;
+         38: 	try
+         39: 	{
+      >  40: 		cpr_check(x > y).assert_watch(x).Ex();
+         41: 	}
+         42: 	catch (const std::exception& e)
+         43: 	{
+#21
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(47): , in CPR::UTL::Assertion::Ex
+         44: 	{
+         45: 		mConsequence = Consequence::Exception;
+         46: 		mSkipDepth = SKIP_DEPTH_EX;
+      >  47: 		throw FailedAssertion{};
+         48: 	}
+         49: }
+#20   Object "", at 00007FF872BC6720, in CxxThrowException
+#19   Object "", at 00007FF89F50CF19, in RaiseException
+#18   Object "", at 00007FF8A18B0F0E, in KiUserExceptionDispatcher
+#17   Object "", at 00007FF8A18614A4, in RtlRaiseException
+#16   Object "", at 00007FF8A18B23DF, in _chkstk
+#15
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#14   Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#13   Object "", at 00007FF889EB237A, in _NLG_Return2
+#12   Object "", at 00007FF889EB2317, in _NLG_Return2
+#11   Object "", at 00007FF889EB19D5, in _NLG_Return2
+#10   Object "", at 00007FF889EB1635, in _NLG_Return2
+#9    Object "", at 00007FF889EB3DDE, in _NLG_Return2
+#8    Object "", at 00007FF8A1840939, in RtlUnwindEx
+#7    Object "", at 00007FF8A18B245F, in _chkstk
+#6 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#5    Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#4    Object "", at 00007FF889EB237A, in _NLG_Return2
+#3    Object "", at 00007FF889EB21E9, in _NLG_Return2
+#2    Object "", at 00007FF889EB2CC8, in _NLG_Return2
+#1    Object "", at 00007FF889EB1030, in  ?? 
+#0    Object "", at 00007FF79FC1DB9F, in main$dtor$10
+
+@Error {2023-06-12 17:35:21.7846355 CEST} ==Trace==
+  >> at main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+Stack trace (most recent call last):
+
+@Error {2023-06-12 17:35:21.8616149 CEST} Assertion failed, x > y
+   x => 0
+
+  >> at main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#24   Object "", at 00007FF8A0177614, in BaseThreadInitThunk
+#23
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#22
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35): , in main
+         33: 	int x = 0, y = 1;
+         34: 	try{
+      >  35: 		cpr_check(x > y).assert_watch(x).Ex();
+         36: 	}
+         37: 	catch (const std::exception& e){
+         38: 		std::cout << e.what() << std::endl;
+#21
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(47): , in CPR::UTL::Assertion::Ex
+         44: 	{
+         45: 		mConsequence = Consequence::Exception;
+         46: 		mSkipDepth = SKIP_DEPTH_EX;
+      >  47: 		throw FailedAssertion{};
+         48: 	}
+         49: }
+#20   Object "", at 00007FF872BC6720, in CxxThrowException
+#19   Object "", at 00007FF89F50CF19, in RaiseException
+#18   Object "", at 00007FF8A18B0F0E, in KiUserExceptionDispatcher
+#17   Object "", at 00007FF8A18614A4, in RtlRaiseException
+#16   Object "", at 00007FF8A18B23DF, in _chkstk
+#15
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#14   Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#13   Object "", at 00007FF889EB237A, in _NLG_Return2
+#12   Object "", at 00007FF889EB2317, in _NLG_Return2
+#11   Object "", at 00007FF889EB19D5, in _NLG_Return2
+#10   Object "", at 00007FF889EB1635, in _NLG_Return2
+#9    Object "", at 00007FF889EB3DDE, in _NLG_Return2
+#8    Object "", at 00007FF8A1840939, in RtlUnwindEx
+#7    Object "", at 00007FF8A18B245F, in _chkstk
+#6 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#5    Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#4    Object "", at 00007FF889EB237A, in _NLG_Return2
+#3    Object "", at 00007FF889EB21E9, in _NLG_Return2
+#2    Object "", at 00007FF889EB2CC8, in _NLG_Return2
+#1    Object "", at 00007FF889EB1030, in  ?? 
+#0    Object "", at 00007FF6446FD694, in main$dtor$4
+
+@Error {2023-06-13 11:06:59.3463548 CEST} ==Trace==
+  >> at main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(31)
+Stack trace (most recent call last):
+
+@Error {2023-06-13 11:06:59.4611460 CEST} Assertion failed, x > y
+   x => 0
+
+  >> at main
+     C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35)
+Stack trace (most recent call last):
+#24   Object "", at 00007FF8A0177614, in BaseThreadInitThunk
+#23
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl(288): , in __scrt_common_main_seh
+#22
+   C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\Main.cpp(35): , in main
+         33: 	int x = 0, y = 1;
+         34: 	try{
+      >  35: 		cpr_check(x > y).assert_watch(x).Ex();
+         36: 	}
+         37: 	catch (const std::exception& e){
+         38: 		std::cout << e.what() << std::endl;
+#21
+   C:\Users\axel_\Brewski\Copper2.0\Core\src\utl\Assert.cpp(47): , in CPR::UTL::Assertion::Ex
+         44: 	{
+         45: 		mConsequence = Consequence::Exception;
+         46: 		mSkipDepth = SKIP_DEPTH_EX;
+      >  47: 		throw FailedAssertion{};
+         48: 	}
+         49: }
+#20   Object "", at 00007FF897336720, in CxxThrowException
+#19   Object "", at 00007FF89F50CF19, in RaiseException
+#18   Object "", at 00007FF8A18B0F0E, in KiUserExceptionDispatcher
+#17   Object "", at 00007FF8A18614A4, in RtlRaiseException
+#16   Object "", at 00007FF8A18B23DF, in _chkstk
+#15
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#14   Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#13   Object "", at 00007FF889EB237A, in _NLG_Return2
+#12   Object "", at 00007FF889EB2317, in _NLG_Return2
+#11   Object "", at 00007FF889EB19D5, in _NLG_Return2
+#10   Object "", at 00007FF889EB1635, in _NLG_Return2
+#9    Object "", at 00007FF889EB3DDE, in _NLG_Return2
+#8    Object "", at 00007FF8A1840939, in RtlUnwindEx
+#7    Object "", at 00007FF8A18B245F, in _chkstk
+#6 
+   D:\a\_work\1\s\src\vctools\crt\vcstartup\src\gs\amd64\gshandlereh4.cpp(86): , in __GSHandlerCheck_EH4
+#5    Object "", at 00007FF889EB4149, in _CxxFrameHandler4
+#4    Object "", at 00007FF889EB237A, in _NLG_Return2
+#3    Object "", at 00007FF889EB21E9, in _NLG_Return2
+#2    Object "", at 00007FF889EB2CC8, in _NLG_Return2
+#1    Object "", at 00007FF889EB1030, in  ?? 
+#0    Object "", at 00007FF6B23ED694, in main$dtor$4
+

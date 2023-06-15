@@ -1,0 +1,6 @@
+﻿     Creating library C:\Users\axel_\Brewski\Copper2.0\x64\Release\UnitTest.lib and object C:\Users\axel_\Brewski\Copper2.0\x64\Release\UnitTest.exp
+  Generating code
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 4137 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  UnitTest.vcxproj -> C:\Users\axel_\Brewski\Copper2.0\x64\Release\UnitTest.dll

@@ -1,0 +1,2 @@
+C:\Users\axel_\Brewski\Copper2.0\x64\Release\ConsoleSandbox.exe.lastcodeanalysissucceeded
+C:\Users\axel_\Brewski\Copper2.0\ConsoleSandbox\x64\Release\NativeCodeAnalysis.read.1.tlog

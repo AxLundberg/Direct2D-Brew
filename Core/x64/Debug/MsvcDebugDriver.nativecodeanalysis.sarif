@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/msvcdebugdriver.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "479d252461e97aea7619ac7b538740943ccb90e55746a5d27ec20702294c3848"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/msvcdebugdriver.h"
+          },
+          "hashes": {
+            "sha-256": "0260be9b7140fc3d6c97ea4c8f6b876780c7cc4b124a61651869b7b558287aee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/driver.h"
+          },
+          "hashes": {
+            "sha-256": "db93de01d06db02cf2401789ed6bea563170aac7de72adad5eeefc6a581b846d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/textformatter.h"
+          },
+          "hashes": {
+            "sha-256": "ac9a6f536228c20d85f2a92819693ffddd4f8723c4c246b98ece040ff11ff4a3"
+          }
+        }
+      ]
+    }
+  ]
+}

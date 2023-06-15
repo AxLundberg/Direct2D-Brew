@@ -1,0 +1,171 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/consolesandbox/main.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "658c97e7a0e55fd3072c9c46d429c380f086e46e2d5ea53d26ffca80775f3471"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/log.h"
+          },
+          "hashes": {
+            "sha-256": "86e7278a66242526b5102af4012e3a2c639a60e3cc6c8c661f7573e8397f3da3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/channel.h"
+          },
+          "hashes": {
+            "sha-256": "9ec3b9aadadb81ec51681831eea81df6e171b57b9d3f5e181a3e51edbb8d36ed"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entrybuilder.h"
+          },
+          "hashes": {
+            "sha-256": "40e6b27d98646243ac0bc23db50dc5fbed62aba309cbac89a2e8cbc92866d3de"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entry.h"
+          },
+          "hashes": {
+            "sha-256": "bb61a9666a4ece8d02c67dadbeb7b210f6b3f10d32ed1d01c1320b61dc002d85"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/level.h"
+          },
+          "hashes": {
+            "sha-256": "f56146f60609ad21b0379dc647ceb5545ffcb1845325dde475eb319cc7b2a6ac"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/stacktrace.h"
+          },
+          "hashes": {
+            "sha-256": "8a7e358d1582d2dd470b4fb94eb96d5f30e0a3c8849d90527e486f357486f5d2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/assert.h"
+          },
+          "hashes": {
+            "sha-256": "01ab35e5681b1f2cf99cfa4f28d8b5f11c4d0c6c39acf95a0ab53f142f1b3e2f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/macro.h"
+          },
+          "hashes": {
+            "sha-256": "4b19c21c847af65828380cb1689aa8173e2186e6c36def83a1d06d3abc0f403e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/exception.h"
+          },
+          "hashes": {
+            "sha-256": "a87671e3c208f87c0b7ebf85d241281c810d771bbec7d9bc8bb8bd7c2aefc55a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/noreturn.h"
+          },
+          "hashes": {
+            "sha-256": "0bbab1160b52419b7ae23d042c90681c1eb25dacb3bd1a8fa9db3002f6b23ebb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/textformatter.h"
+          },
+          "hashes": {
+            "sha-256": "ac9a6f536228c20d85f2a92819693ffddd4f8723c4c246b98ece040ff11ff4a3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/msvcdebugdriver.h"
+          },
+          "hashes": {
+            "sha-256": "0260be9b7140fc3d6c97ea4c8f6b876780c7cc4b124a61651869b7b558287aee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/driver.h"
+          },
+          "hashes": {
+            "sha-256": "db93de01d06db02cf2401789ed6bea563170aac7de72adad5eeefc6a581b846d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/severitylevelpolicy.h"
+          },
+          "hashes": {
+            "sha-256": "9f1c5120fe63dfd9d40ebceda7f7e9effce93ea1ab21099866a04f44b646174b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/policy.h"
+          },
+          "hashes": {
+            "sha-256": "f2d39c7d5a924492d2099fd92e78b8b90137b1e9339ad7a8853e5b26c32404d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/windowclass.h"
+          },
+          "hashes": {
+            "sha-256": "2ac769193581577ff841ff72cdb7c5325e378af4ec2f1bb50d828303b614db43"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/copperwin.h"
+          },
+          "hashes": {
+            "sha-256": "0e48d721d26d1897bf345c9c8113a8ca824737caaf452d8eced9cdc29249060c"
+          }
+        }
+      ]
+    }
+  ]
+}

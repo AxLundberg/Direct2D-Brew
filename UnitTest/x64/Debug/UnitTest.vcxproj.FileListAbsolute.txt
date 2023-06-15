@@ -1,0 +1,2 @@
+C:\Users\axel_\Brewski\Copper2.0\x64\Debug\UnitTest.dll.lastcodeanalysissucceeded
+C:\Users\axel_\Brewski\Copper2.0\UnitTest\x64\Debug\NativeCodeAnalysis.read.1.tlog

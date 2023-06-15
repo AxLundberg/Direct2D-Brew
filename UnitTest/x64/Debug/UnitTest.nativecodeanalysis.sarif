@@ -1,0 +1,83 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.34.31937.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/unittest/unittest.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "a7c8615a65e26cf79a4782160609fb50a71c0cd27ed1b834c010bbced571110f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/unittest/cprcppunittests.h"
+          },
+          "hashes": {
+            "sha-256": "64dd33afd9c8f60f027684553c6b11b2ad62c7adb9cd9523919b0783d5dd7368"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files/microsoft visual studio/2022/community/vc/auxiliary/vs/unittest/include/cppunittest.h"
+          },
+          "hashes": {
+            "sha-256": "1378b2fc1fa8cda7a282ddbb3bdd47778c995dde124701e01d2d74330d752fc7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files/microsoft visual studio/2022/community/vc/auxiliary/vs/unittest/include/cppunittestcommon.h"
+          },
+          "hashes": {
+            "sha-256": "9a8f906c1baf61c9d28bbdd3855bc24196b36727dd8b4f243f03f78ab4763dbd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files/microsoft visual studio/2022/community/vc/auxiliary/vs/unittest/include/cppunittestassert.h"
+          },
+          "hashes": {
+            "sha-256": "53c4d039a434ce2ec6ee73dc2e9e58b8291e4b75d92e27b28cfc2d5bdb541445"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/program files/microsoft visual studio/2022/community/vc/auxiliary/vs/unittest/include/cppunittestlogger.h"
+          },
+          "hashes": {
+            "sha-256": "c0715b1e3db28155d7a0d45e601fd72bdd80495ae0ddcad5654f8f1ef4048cb4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/ioc/container.h"
+          },
+          "hashes": {
+            "sha-256": "5d8c053585fe1fd21e6a867b354d812c2e66c62963a6840885366c1f142d821e"
+          }
+        }
+      ]
+    }
+  ]
+}
