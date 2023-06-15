@@ -1,3 +1,21 @@
-﻿  Boot.cpp
+﻿  GenericTaskQueue.cpp
+  Container.cpp
+  Singletons.cpp
+  Channel.cpp
+  EntryBuilder.cpp
+  Level.cpp
+  Log.cpp
+  MsvcDebugDriver.cpp
+  SeverityLevelPolicy.cpp
+  SimpleFileDriver.cpp
+  TextFormatter.cpp
+  Assert.cpp
+  Exception.cpp
+  NoReturn.cpp
+  StackTrace.cpp
+  String.cpp
+  Boot.cpp
+  Util.cpp
   Window.cpp
-  Core.vcxproj -> C:\Users\axel_\Brewski\Copper2.0\x64\Release\Core.lib
+  WindowClass.cpp
+  Core.vcxproj -> C:\Users\axel_\Brewski\Direct2D-Brew\x64\Release\Core.lib

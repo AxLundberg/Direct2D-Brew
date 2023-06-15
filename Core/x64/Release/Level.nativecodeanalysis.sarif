@@ -20,7 +20,7 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/level.cpp"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/level.cpp"
           },
           "roles": [
             "analysisTarget"
@@ -31,7 +31,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/level.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/level.h"
           },
           "hashes": {
             "sha-256": "f56146f60609ad21b0379dc647ceb5545ffcb1845325dde475eb319cc7b2a6ac"

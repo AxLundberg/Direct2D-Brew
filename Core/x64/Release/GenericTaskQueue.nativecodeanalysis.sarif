@@ -20,7 +20,7 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/ccr/generictaskqueue.cpp"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/ccr/generictaskqueue.cpp"
           },
           "roles": [
             "analysisTarget"
@@ -31,7 +31,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/ccr/generictaskqueue.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/ccr/generictaskqueue.h"
           },
           "hashes": {
             "sha-256": "7547e66230f7477c63fb1ca4c29cd18dbd601bacee22d1cee1e9813e3da0f12e"

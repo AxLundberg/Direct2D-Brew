@@ -31,7 +31,7 @@ int WINAPI wWinMain(
 {
 	Boot();
 
-	auto windowPtrs = vi::iota(0, 3) |
+	auto windowPtrs = vi::iota(0, 4) |
 		vi::transform([](auto i) {return IOC::Get().Resolve<WIN::IWindow>(); }) |
 		rn::to<std::vector>();
 

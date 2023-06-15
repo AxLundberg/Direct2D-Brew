@@ -20,7 +20,7 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/windowclass.cpp"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/win/windowclass.cpp"
           },
           "roles": [
             "analysisTarget"
@@ -31,7 +31,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/windowclass.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/win/windowclass.h"
           },
           "hashes": {
             "sha-256": "2ac769193581577ff841ff72cdb7c5325e378af4ec2f1bb50d828303b614db43"
@@ -39,7 +39,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/copperwin.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/win/copperwin.h"
           },
           "hashes": {
             "sha-256": "0e48d721d26d1897bf345c9c8113a8ca824737caaf452d8eced9cdc29249060c"
@@ -47,7 +47,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/iwindow.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/win/iwindow.h"
           },
           "hashes": {
             "sha-256": "33315f206b55fcc6b900563d5a9349980ee3b2bd78279165406e70a5c5a2539d"
@@ -55,7 +55,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/spa/vec2.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/spa/vec2.h"
           },
           "hashes": {
             "sha-256": "f1afa66e017c82d0439aa2e776ba4828101d5a6e45d8ae7775ba55f03d4aa5d1"
@@ -63,7 +63,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/spa/dimensions.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/spa/dimensions.h"
           },
           "hashes": {
             "sha-256": "6fdf4488addcd745112a5278d400d08b2b6f1408bbc1058c882b3f2c9a92b42c"
@@ -71,7 +71,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/exception.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/win/exception.h"
           },
           "hashes": {
             "sha-256": "0086e0421d24740cde0169abf6d1b6f2f337bc25896223a9a7e142bdeb714132"
@@ -79,7 +79,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/exception.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/utl/exception.h"
           },
           "hashes": {
             "sha-256": "a87671e3c208f87c0b7ebf85d241281c810d771bbec7d9bc8bb8bd7c2aefc55a"
@@ -87,7 +87,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/log.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/log.h"
           },
           "hashes": {
             "sha-256": "86e7278a66242526b5102af4012e3a2c639a60e3cc6c8c661f7573e8397f3da3"
@@ -95,7 +95,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/channel.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/channel.h"
           },
           "hashes": {
             "sha-256": "9ec3b9aadadb81ec51681831eea81df6e171b57b9d3f5e181a3e51edbb8d36ed"
@@ -103,7 +103,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entrybuilder.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/entrybuilder.h"
           },
           "hashes": {
             "sha-256": "40e6b27d98646243ac0bc23db50dc5fbed62aba309cbac89a2e8cbc92866d3de"
@@ -111,7 +111,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entry.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/entry.h"
           },
           "hashes": {
             "sha-256": "bb61a9666a4ece8d02c67dadbeb7b210f6b3f10d32ed1d01c1320b61dc002d85"
@@ -119,7 +119,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/level.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/level.h"
           },
           "hashes": {
             "sha-256": "f56146f60609ad21b0379dc647ceb5545ffcb1845325dde475eb319cc7b2a6ac"
@@ -127,7 +127,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/stacktrace.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/utl/stacktrace.h"
           },
           "hashes": {
             "sha-256": "8a7e358d1582d2dd470b4fb94eb96d5f30e0a3c8849d90527e486f357486f5d2"
@@ -135,7 +135,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/assert.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/utl/assert.h"
           },
           "hashes": {
             "sha-256": "01ab35e5681b1f2cf99cfa4f28d8b5f11c4d0c6c39acf95a0ab53f142f1b3e2f"
@@ -143,7 +143,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/macro.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/utl/macro.h"
           },
           "hashes": {
             "sha-256": "4b19c21c847af65828380cb1689aa8173e2186e6c36def83a1d06d3abc0f403e"
@@ -151,7 +151,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/noreturn.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/utl/noreturn.h"
           },
           "hashes": {
             "sha-256": "0bbab1160b52419b7ae23d042c90681c1eb25dacb3bd1a8fa9db3002f6b23ebb"

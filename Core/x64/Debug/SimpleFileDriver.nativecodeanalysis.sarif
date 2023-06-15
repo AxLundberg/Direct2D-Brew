@@ -20,7 +20,7 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/simplefiledriver.cpp"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/simplefiledriver.cpp"
           },
           "roles": [
             "analysisTarget"
@@ -31,7 +31,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/simplefiledriver.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/simplefiledriver.h"
           },
           "hashes": {
             "sha-256": "d95f78dc3c4ed8786a2d0d56c7a2c9d13531bd8d678ced633e6e74ed37541747"
@@ -39,7 +39,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/driver.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/driver.h"
           },
           "hashes": {
             "sha-256": "db93de01d06db02cf2401789ed6bea563170aac7de72adad5eeefc6a581b846d"
@@ -47,7 +47,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/textformatter.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/textformatter.h"
           },
           "hashes": {
             "sha-256": "ac9a6f536228c20d85f2a92819693ffddd4f8723c4c246b98ece040ff11ff4a3"

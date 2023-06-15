@@ -20,7 +20,7 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entrybuilder.cpp"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/entrybuilder.cpp"
           },
           "roles": [
             "analysisTarget"
@@ -31,7 +31,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entrybuilder.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/entrybuilder.h"
           },
           "hashes": {
             "sha-256": "40e6b27d98646243ac0bc23db50dc5fbed62aba309cbac89a2e8cbc92866d3de"
@@ -39,7 +39,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/entry.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/entry.h"
           },
           "hashes": {
             "sha-256": "bb61a9666a4ece8d02c67dadbeb7b210f6b3f10d32ed1d01c1320b61dc002d85"
@@ -47,7 +47,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/level.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/level.h"
           },
           "hashes": {
             "sha-256": "f56146f60609ad21b0379dc647ceb5545ffcb1845325dde475eb319cc7b2a6ac"
@@ -55,7 +55,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/utl/stacktrace.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/utl/stacktrace.h"
           },
           "hashes": {
             "sha-256": "8a7e358d1582d2dd470b4fb94eb96d5f30e0a3c8849d90527e486f357486f5d2"
@@ -63,7 +63,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/log/channel.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/log/channel.h"
           },
           "hashes": {
             "sha-256": "9ec3b9aadadb81ec51681831eea81df6e171b57b9d3f5e181a3e51edbb8d36ed"
@@ -71,7 +71,7 @@
         },
         {
           "location": {
-            "uri": "file:///c:/users/axel_/brewski/copper2.0/core/src/win/copperwin.h"
+            "uri": "file:///c:/users/axel_/brewski/direct2d-brew/core/src/win/copperwin.h"
           },
           "hashes": {
             "sha-256": "0e48d721d26d1897bf345c9c8113a8ca824737caaf452d8eced9cdc29249060c"
